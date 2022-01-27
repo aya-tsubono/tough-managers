@@ -20,25 +20,25 @@
 | ------------------ | ---------- | ------------------------------ |
 | date               | date       | null: false                    |
 | state_id           | integer    | null: false                    |
-| introducer_id      | integer    | null: false                    |
-| introducer_name    | string     | null: false                    |
+| introducer_id      | integer    |                                |
+| introducer_name    | string     |                                |
 | case_name          | string     | null: false                    |
-| age                | string     | null: false                    |
-| address            | string     | null: false                    |
+| age                | string     |                                |
+| address            | string     |                                |
 | household_id       | integer    | null: false                    |
 | place_id           | integer    | null: false                    |
 | economic_status_id | integer    | null: false                    |
 | care_level_id      | integer    | null: false                    |
 | handicap_level_id  | integer    | null: false                    |
-| cost               | string     | null: false                    |
-| location           | string     | null: false                    |
-| medical_condition  | text       | null: false                    |
-| care_condition     | text       | null: false                    |
-| remarks            | text       | null: false                    |
-| move_in_date       | date       | null: false                    |
-| main_fee           | integer    | null: false                    |
-| other_fee          | integer    | null: false                    |
-| home_name          | string     | null: false                    |
+| cost               | string     |                                |
+| location           | string     |                                |
+| medical_condition  | text       |                                |
+| care_condition     | text       |                                |
+| remarks            | text       |                                |
+| move_in_date       | date       |                                |
+| main_fee           | integer    |                                |
+| other_fee          | integer    |                                |
+| home_name          | string     |                                |
 | user_id            | references | null: false, foreign_key: true |
 
 ### Association
