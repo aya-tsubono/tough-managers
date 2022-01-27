@@ -10,7 +10,7 @@
 
 ### Association
 
-- has_many :cases
+- 
 
 
 ## cases テーブル
@@ -42,9 +42,7 @@
 
 ### Association
 
-- has_many :memos
-- belongs_to :user
-
+- 
 
 ## memos テーブル
 
@@ -55,4 +53,4 @@
 
 ### Association
 
-- belongs_to :case
+- 
