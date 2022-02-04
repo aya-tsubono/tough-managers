@@ -5,7 +5,7 @@ class CasesController < ApplicationController
   end
 
   def new
-
+    @case = Case.new
   end
 
   def create
