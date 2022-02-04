@@ -1,0 +1,172 @@
+<div class="case-contents">
+  <div class="case-main">
+    <h2 class="case-title">案件情報を入力</h2>
+
+<%= form_with model: @case, id: 'new_case', local: true do |f| %>
+
+  <%# dateとstate %>
+  <div class="date-state">
+    <div class='form-text-wrap'>
+      <div class="weight-bold-text">
+      依頼日
+      <span class="indispensable">必須</span>
+      </div>
+    </div>
+    <div class='input-date-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :date,
+                    class:'select-date',
+                    id:"date-input",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2020,
+                    end_year: (Time.now.year),
+                    date_separator: '%s'),
+                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+
+    <div class="weight-bold-text">
+      進捗状況
+      <span class="indispensable">必須</span>
+    </div>
+      <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"select-box", id:"case-category"}) %>
+  </div>
+  <%# //dateとstate %>
+
+  <%# 紹介元 %>
+  <div class="case-introduce">
+    <div class="post-bold-text">紹介元</div>
+    <div class="form">
+      <div class="weight-bold-text">
+        紹介先のカテゴリー
+      </div>
+      <%= f.collection_select(:introducer_id, Introducer.all, :id, :name, {}, {class:"select-box", id:"case-category"}) %>
+      <div class="weight-bold-text">
+        紹介先の名前
+      </div>
+      <%= f.text_area :introducer_name, class:"case-text", id:"introduser-name", placeholder:"紹介者の名前等" ,maxlength:"50" %>
+    </div>
+  </div>
+  <%# //紹介元 %>
+
+  <%# case詳細 %>
+  <div class="case-detail">
+    <div class="post-bold-text">案件の詳細</div>
+    <div class="form">
+      <div class="weight-bold-text">
+        入居者の名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :case_name, class:"case-text", id:"case-name", placeholder:"お名前" ,maxlength:"50" %>
+      <div class="weight-bold-text">
+        年齢
+      </div>
+      <%= f.text_area :age, class:"case-text", id:"age", placeholder:"年齢" ,maxlength:"50" %>
+      <div class="weight-bold-text">
+        住所
+      </div>
+      <%= f.text_area :address, class:"case-text", id:"address", placeholder:"住所" ,maxlength:"50" %>
+      <div class="weight-bold-text">
+        世帯情報
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:household_id, Household.all, :id, :name, {}, {class:"select-box", id:"household"}) %>
+      <div class="weight-bold-text">
+        現在の所在地
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box", id:"place"}) %>
+      <div class="weight-bold-text">
+        経済状況
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:economic_status_id, EconomicStatus.all, :id, :name, {}, {class:"select-box", id:"economic-status"}) %>
+      <div class="weight-bold-text">
+        介護度
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:care_level_id, CareLevel.all, :id, :name, {}, {class:"select-box", id:"care-level"}) %>
+      <div class="weight-bold-text">
+        障害等級
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:handicap_level_id, HandicapLevel.all, :id, :name, {}, {class:"select-box", id:"handicap-level"}) %>
+      <div class="weight-bold-text">
+        医療面の情報
+      </div>
+      <%= f.text_area :medical_condition, class:"case-text", id:"medical-condition", placeholder:"医療情報" ,maxlength:"500" %>
+      <div class="weight-bold-text">
+        介護面の情報
+      </div>
+      <%= f.text_area :care_condition, class:"case-text", id:"care-condition", placeholder:"介護情報" ,maxlength:"500" %>
+    </div>
+  </div>
+  <%# //case詳細 %>
+
+  <%# 希望条件 %>
+  <div class="case-condition">
+    <div class="post-bold-text">希望条件</div>
+    <div class="form">
+      <div class="weight-bold-text">
+        費用
+      </div>
+      <%= f.text_area :cost, class:"case-text", id:"cost", placeholder:"費用目安" ,maxlength:"50" %>
+      <div class="weight-bold-text">
+        立地
+      </div>
+      <%= f.text_area :location, class:"case-text", id:"location", placeholder:"費用目安" ,maxlength:"50" %>
+      <div class="weight-bold-text">
+        備考
+      </div>
+      <%= f.text_area :remarks, class:"case-text", id:"remarks", placeholder:"備考" ,maxlength:"500" %>
+    </div>
+  </div>
+  <%# //希望条件 %>
+
+  <%# 入居関連 %>
+  <div class="case-direction">
+    <div class="post-bold-text">入居情報</div>
+      <div class="form">
+        <div class="weight-bold-text">
+        入居日
+        </div>
+      <div class='move-in-date-wrap'>
+       <%= raw sprintf(
+                  f.date_select(
+                    :date,
+                    class:'select-date',
+                    id:"move-in-date-input",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2020,
+                    end_year: (Time.now.year),
+                    date_separator: '%s'),
+                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+       </div>
+      <div class="weight-bold-text">
+        紹介料
+      </div>
+      <%= f.text_area :main_fee, class:"case-text", id:"main-fee", placeholder:"紹介料(半角数字のみ)" %>
+      <div class="weight-bold-text">
+        その他紹介料
+      </div>
+      <%= f.text_area :other_fee, class:"case-text", id:"other-fee", placeholder:"入居以外の紹介料(半角数字のみ)" %>
+      <div class="weight-bold-text">
+        入居先
+      </div>
+      <%= f.text_area :home_name, class:"case-text", id:"home-name", placeholder:"ホームの名前" ,maxlength:"50" %>
+    </div>
+  </div>
+  <%# //入居関連 %>
+
+  <%# 下部ボタン %>
+    <div class="send-btn-contents">
+      <%= f.submit "登録", class:"send-btn" %><br>
+    </div>
+  <%# //下部ボタン %>
+    </div>
+  <% end %>
+
+  </div>
+</div>
