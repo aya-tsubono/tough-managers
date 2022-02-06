@@ -5,7 +5,7 @@ class Introducer < ActiveHash::Base
     { id: 3, name: '病院' },
     { id: 4, name: '公的機関' },
     { id: 5, name: '介護施設' },
-    { id: 6, name: '他' },
+    { id: 6, name: '他' }
   ]
 
   include ActiveHash::Associations
