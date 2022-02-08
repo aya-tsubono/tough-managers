@@ -91,7 +91,7 @@
         障害等級
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:handicap_level_id, HandicapLevel.all, :id, :name, {}, {class:"select-box", id:"handicap-level"}) %>
+      <%= f.text_area :handicap_level, class:"case-text", id:"handicap-level", placeholder:"障害等級など" ,maxlength:"500" %>
       <div class="weight-bold-text">
         医療面の情報
       </div>
