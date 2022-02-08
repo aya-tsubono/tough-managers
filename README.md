@@ -29,7 +29,7 @@
 | place_id           | integer    | null: false                    |
 | economic_status_id | integer    | null: false                    |
 | care_level_id      | integer    | null: false                    |
-| handicap_level_id  | integer    | null: false                    |
+| handicap_level     | string     |                                |
 | cost               | string     |                                |
 | location           | string     |                                |
 | medical_condition  | text       |                                |
