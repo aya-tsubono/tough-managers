@@ -2,6 +2,7 @@ class Case < ApplicationRecord
   belongs_to :user
 
   validates :date, presence: true
+  validates :case_name, presence: true
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
