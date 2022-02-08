@@ -1,6 +1,9 @@
 class Case < ApplicationRecord
   belongs_to :user
 
+  validates :date, presence: true
+
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :state
   belongs_to :introducer
