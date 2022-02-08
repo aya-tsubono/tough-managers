@@ -4,6 +4,8 @@
 
 <%= form_with model: @case, id: 'new_case', local: true do |f| %>
 
+  <%= render 'shared/error_messages', model: f.object %>
+
   <%# dateとstate %>
   <div class="date-state">
     <div class='form-text-wrap'>
