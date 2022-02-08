@@ -1,4 +1,5 @@
 class Case < ApplicationRecord
+  belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :state
