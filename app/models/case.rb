@@ -17,7 +17,7 @@ class Case < ApplicationRecord
   validates :introducer_id, presence: true, numericality: { only_integer: true }
   validates :household_id, presence: true, numericality: { only_integer: true }
   validates :place_id, presence: true, numericality: { only_integer: true }
-  validates :econimic_status_id, presence: true, numericality: { only_integer: true }
+  validates :economic_status_id, presence: true, numericality: { only_integer: true }
   validates :care_level_id, presence: true, numericality: { only_integer: true }
 
 end
