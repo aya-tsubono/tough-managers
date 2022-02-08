@@ -13,7 +13,6 @@
   width: 80vw;
   min-width: 450px;
   padding: 10vh 15vw;
-  font-family: 'Amatic SC', cursive;
 }
 
 .case-title {
@@ -133,7 +132,6 @@
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 4vh;
-  font-family: 'Amatic SC', cursive;
 }
 
 /* /下部ボタン */
