@@ -1,6 +1,6 @@
 <div class="case-contents">
   <div class="case-main">
-    <h2 class="case-title">案件情報を入力</h2>
+    <h2 class="case-title">案件情報の入力</h2>
 
 <%= form_with model: @case, id: 'new_case', local: true do |f| %>
 
@@ -115,7 +115,7 @@
       <div class="weight-bold-text">
         立地
       </div>
-      <%= f.text_area :location, class:"case-text", id:"location", placeholder:"費用目安" ,maxlength:"50" %>
+      <%= f.text_area :location, class:"case-text", id:"location", placeholder:"立地条件" ,maxlength:"50" %>
       <div class="weight-bold-text">
         備考
       </div>
