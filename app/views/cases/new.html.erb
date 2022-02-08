@@ -89,7 +89,6 @@
       <%= f.collection_select(:care_level_id, CareLevel.all, :id, :name, {}, {class:"select-box", id:"care-level"}) %>
       <div class="weight-bold-text">
         障害等級
-        <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :handicap_level, class:"case-text", id:"handicap-level", placeholder:"障害等級など" ,maxlength:"500" %>
       <div class="weight-bold-text">
