@@ -61,6 +61,5 @@ end
 
 gem 'devise'
 gem 'pry-rails'
-gem 'rspec-core'
 gem 'faker'
 gem 'active_hash'
