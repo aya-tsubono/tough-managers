@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_071613) do
+ActiveRecord::Schema.define(version: 2022_02_08_112612) do
+
+  create_table "cases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "state_id", null: false
+    t.integer "introducer_id"
+    t.string "introducer_name"
+    t.string "case_name", null: false
+    t.string "age"
+    t.string "address"
+    t.integer "household_id", null: false
+    t.integer "place_id", null: false
+    t.integer "economic_status_id", null: false
+    t.integer "care_level_id", null: false
+    t.string "handicap_level", null: false
+    t.string "cost"
+    t.string "location"
+    t.text "medical_condition"
+    t.text "care_condition"
+    t.text "remarks"
+    t.date "move_in_date"
+    t.integer "main_fee"
+    t.integer "other_fee"
+    t.string "home_name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cases_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_name", null: false
@@ -25,4 +53,5 @@ ActiveRecord::Schema.define(version: 2022_01_29_071613) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cases", "users"
 end
