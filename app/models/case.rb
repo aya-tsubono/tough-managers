@@ -1,7 +1,7 @@
 class Case < ApplicationRecord
   belongs_to :user
 
-  validates :date,      presence: true
+  validates :date, presence: true
   validates :introducer_name,           length: { maximum: 50 }
   validates :case_name, presence: true, length: { maximum: 50 }
   validates :age,                       length: { maximum: 50 }
@@ -27,5 +27,4 @@ class Case < ApplicationRecord
   validates :place_id,           presence: true, numericality: { only_integer: true }
   validates :economic_status_id, presence: true, numericality: { only_integer: true }
   validates :care_level_id,      presence: true, numericality: { only_integer: true }
-
 end
