@@ -52,6 +52,56 @@ RSpec.describe Case, type: :model do
         @case.valid?
         expect(@case.errors.full_messages).to include('User must exist')
       end
+      it 'introducer_nameが50文字を超えると登録できない' do
+        @case.introducer_name = 'a' * 51
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Introducer name is too long (maximum is 50 characters)')
+      end
+      it 'case_nameが50文字を超えると登録できない' do
+        @case.case_name = 'a' * 51
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Case name is too long (maximum is 50 characters)')
+      end
+      it 'ageが50文字を超えると登録できない' do
+        @case.age = 'a' * 51
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Age is too long (maximum is 50 characters)')
+      end
+      it 'addressが50文字を超えると登録できない' do
+        @case.address = 'a' * 51
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Address is too long (maximum is 50 characters)')
+      end
+      it 'handicap_levelが500文字を超えると登録できない' do
+        @case.handicap_level = 'a' * 501
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Handicap level is too long (maximum is 500 characters)')
+      end
+      it 'medical_conditionが500文字を超えると登録できない' do
+        @case.medical_condition = 'a' * 501
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Medical condition is too long (maximum is 500 characters)')
+      end
+      it 'care_conditionが500文字を超えると登録できない' do
+        @case.care_condition = 'a' * 501
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Care condition is too long (maximum is 500 characters)')
+      end
+      it 'costが500文字を超えると登録できない' do
+        @case.cost = 'a' * 501
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Cost is too long (maximum is 500 characters)')
+      end
+      it 'locationが500文字を超えると登録できない' do
+        @case.location = 'a' * 501
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Location is too long (maximum is 500 characters)')
+      end
+      it 'remarksが500文字を超えると登録できない' do
+        @case.remarks = 'a' * 501
+        @case.valid?
+        expect(@case.errors.full_messages).to include('Remarks is too long (maximum is 500 characters)')
+      end
     end
   end
 end
